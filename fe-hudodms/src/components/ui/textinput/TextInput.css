@@ -1,0 +1,26 @@
+.textinput-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: auto;
+    border-radius: 5px;
+    width: 500px;
+    border: 1px solid rgba(0, 0, 0, 0.70);
+}
+
+.textinput-container label {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 1);
+    text-indent: 5px;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.textinput-container input {
+    margin-top: 0px;
+    border-radius: 0px 0px 5px 5px;
+    outline-width: 0px;
+    padding-left: 5px;
+    border: transparent;
+    font-size: 15px;
+}

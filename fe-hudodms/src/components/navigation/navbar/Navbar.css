@@ -1,0 +1,107 @@
+  .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(57, 176, 2, 0.067);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10.2px);
+      -webkit-backdrop-filter: blur(10.2px);
+      padding: 10px 50px;
+  }
+
+  .logo-container {
+      display: flex;
+      align-items: center;
+  }
+
+  .logo-container img {
+      width: 50px;
+      height: auto;
+      margin-right: 20px;
+  }
+
+  .logo-container p {
+      text-shadow: var(--text-shadow);
+      color: var(--font-color);
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0;
+  }
+
+  .tabs-container ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+  }
+
+  .tabs-container li {
+      margin-right: 25px;
+  }
+
+  .tabs-container a {
+      text-shadow: var(--text-shadow);
+      text-decoration: none;
+      color: var(--font-color);
+      font-size: 16px;
+  }
+
+  .tabs-container a:hover {
+      border-bottom: 1px solid var(--font-color);
+  }
+
+
+  /* Modess */
+  .navbar-container.green-mode {
+      background: rgba(57, 176, 2, 0.067);
+  }
+
+  .mode-switch-button {
+      background-color: transparent;
+      border: none;
+      color: var(--font-color);
+      cursor: pointer;
+      font-size: 16px;
+      transition: color 0.3s;
+  }
+
+  .mode-switch-button:hover {
+      color: var(--font-color-hover);
+  }
+
+  /* Phones */
+  @media screen and (max-width: 767px) {
+      .logo-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+
+      .logo-container img {
+          width: 100px;
+          height: auto;
+          margin-left: 7%;
+          padding: 2%;
+      }
+
+      .logo-container p {
+          text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+          color: var(--font-color);
+          font-size: 15px;
+          font-weight: 600;
+          margin: 0;
+          text-align: center;
+      }
+
+      .tabs-container {
+          width: 0vw;
+          height: 0vh;
+      }
+
+      .tabs-container a {
+          text-shadow: 0 0 3px rgba(0, 0, 0, 0);
+          text-decoration: none;
+          color: transparent;
+          font-size: 16px;
+      }
+  }

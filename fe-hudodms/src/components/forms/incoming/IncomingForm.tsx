@@ -46,11 +46,11 @@ export const IncomingForm = () => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: useCallback((acceptedFiles: File[]) => {
       const attachment = acceptedFiles[0];
-      const FileName = attachment.name;
-      setFormData((prevFormData) => ({
+      const fileName = attachment.name;
+      setFormData((prevFormData: FormData) => ({
         ...prevFormData,
         attachmentFile: attachment,
-        attachmentName: FileName,
+        attachmentName: fileName,
       }));
     }, []),
   });

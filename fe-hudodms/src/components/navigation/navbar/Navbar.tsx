@@ -10,7 +10,7 @@ export const Navbar = () => {
         <p>Housing & Urban Poor Development Office {"(DMS)"}</p>
       </div>
       <div className="tabs-container">
-        <ul>
+        {/* <ul>
           <li>
             <a href="Home">Home</a>
           </li>
@@ -20,7 +20,7 @@ export const Navbar = () => {
           <li>
             <a href="Contact">Contact</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

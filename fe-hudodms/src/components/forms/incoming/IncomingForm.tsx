@@ -3,6 +3,7 @@ import { useState, useCallback } from "react";
 import { Button, TextInput, RadioButton } from "../..";
 import { HudoLogo } from "../../../assets";
 import { useDropzone } from "react-dropzone";
+import { IoIosAddCircleOutline } from "react-icons/io";
 import Modal from "react-modal";
 import axios from "axios";
 
@@ -64,6 +65,21 @@ export const IncomingForm = () => {
   };
 
   const handleSubmit = async () => {
+    const requiredFields = [
+      "title",
+      "trackingNumber",
+      "from",
+      "to",
+      "subject",
+      "option",
+    ];
+    const hasEmptyField = requiredFields.some((field) => !formData[field]);
+
+    if (hasEmptyField) {
+      setModalIsOpen(true);
+      return;
+    }
+
     try {
       const formDataObj = new FormData();
       formDataObj.append("title", formData.title);
@@ -74,9 +90,8 @@ export const IncomingForm = () => {
       formDataObj.append("option", formData.option);
       formDataObj.append("attachmentFile", formData.attachmentFile);
 
-      // Send form data to the backend
       const response = await axios.post(
-        "http://192.168.1.16:5000/submit-form",
+        "http://192.168.1.14:5000/submit-form",
         formDataObj,
         {
           headers: {
@@ -98,7 +113,7 @@ export const IncomingForm = () => {
         attachmentName: "",
       });
 
-      alert("Form Submited Success!");
+      alert("Form Submitted Successfully!");
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -182,6 +197,7 @@ export const IncomingForm = () => {
           <div className="row4">
             <div className="input-attachment-container" {...getRootProps()}>
               <div className="input-attachment">
+                <IoIosAddCircleOutline size={"43px"} color="#333" />
                 <div className="input-attachment-label">Attachment</div>
                 <input {...getInputProps()} />
                 <p>

@@ -5,10 +5,10 @@ import { HudoLogo } from "../../../assets";
 export const Navbar = () => {
   return (
     <div className="navbar-container">
-      <div className="logo-container">
+      <a className="logo-container" href="http://192.168.1.16:5173/">
         <img src={HudoLogo} alt="hudo-logo" />
         <p>Housing & Urban Poor Development Office {"(DMS)"}</p>
-      </div>
+      </a>
       <div className="tabs-container">
         {/* <ul>
           <li>

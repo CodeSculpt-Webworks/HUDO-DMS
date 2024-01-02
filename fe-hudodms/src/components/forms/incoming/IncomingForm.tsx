@@ -91,7 +91,7 @@ export const IncomingForm = () => {
       formDataObj.append("attachmentFile", formData.attachmentFile);
 
       const response = await axios.post(
-        "http://192.168.1.14:5000/submit-form",
+        "http://192.168.10.85:5000/submit-form",
         formDataObj,
         {
           headers: {
@@ -119,17 +119,11 @@ export const IncomingForm = () => {
     }
   };
 
-  const handleClear = () => {
-    setFormData({
-      title: "",
-      trackingNumber: "",
-      from: "",
-      to: "",
-      subject: "",
-      option: "",
-      attachmentFile: null,
-      attachmentName: "",
-    });
+  const handleData = () => {
+    window.open(
+      "https://drive.google.com/drive/folders/1yznCO3-h5pT_joDma2GpCW6X14KWbZ6n/",
+      "_blank"
+    );
   };
 
   return (
@@ -211,7 +205,7 @@ export const IncomingForm = () => {
         </div>
       </form>
       <div className="button-container">
-        <Button label="Clear" style={buttonStyle} onClick={handleClear} />
+        <Button label="Data" style={buttonStyle} onClick={handleData} />
         <Button label="Submit" style={buttonStyle} onClick={handleSubmit} />
       </div>
 
